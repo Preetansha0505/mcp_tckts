@@ -2436,6 +2436,104 @@ This ensures you’re always aware when breaking changes occur.
 Would you like me to make this into a **formatted meeting doc (Markdown or Google Docs-ready)** with agenda, discussion points, and action items? That version would be perfect for sharing in your engineering huddle.
 
 
+- I taught myself Math for AI/ML and Security (not in university). At first, I wasn’t sure what to study, but I used Perplexity AI to figure things out. It took me 2–3 days to rework my roadmap, align it with my goals, and add topics useful for both AI/ML and Security. Here’s what I managed to study over a full year while working full-time as a Security Engineer
+
+  Phase 1: Arithmetic & Foundations
+  Arithmetic operations (integers, fractions, decimals)
+  Negative numbers & absolute value
+  Order of operations (PEMDAS)
+  Exponents, roots, and radicals
+  Percentages, ratios, proportions
+  Basic word problems (speed, age, mixtures)
+
+  Phase 2: Pre-Algebra & Algebra Basics
+  Variables, constants, coefficients
+  Simplifying expressions (expand, factor, combine like terms)
+  Linear equations (one and two variables)
+  Quadratic equations (factoring, quadratic formula)
+  Absolute value equations & inequalities
+  Inequalities (solving and graphing)
+  Polynomials: degree, addition, multiplication, factoring
+  Laws of exponents & logarithms
+  Systems of equations
+  Basic word problems and translating language to equations
+
+  Phase 3: Functions & Graphs
+  Function concept: domain, range
+  Linear functions (graphing, slope-intercept form)
+  Quadratic functions (parabolas, vertex, symmetry)
+  Exponential & logarithmic functions (rules, graphing)
+  Rational functions (asymptotes, undefined points)
+  Piecewise & inverse functions
+  Function transformations (shift, scale, reflect)
+  Graphing/plotting basics
+
+  Phase 4: Trigonometry & Coordinate Geometry
+  Unit circle (radians, degrees)
+  Sine, cosine, tangent (definitions, graphs)
+  Basic trig identities (Pythagorean, tan = sin/cos)
+  Simple trig equations
+  Coordinate geometry: distance, midpoint, equation of a line
+  Circles: equation, center, radius
+  (Optional) Law of sines, law of cosines
+
+  Phase 5: Linear Algebra Essentials
+  Vectors: notation, addition, scalar multiplication, norm
+  Dot product, projection
+  Orthogonality & orthogonal projections
+  Matrices: notation, addition, multiplication, identity, transpose
+  Determinants (2×2, 3×3); inverses (2×2, concept for larger)
+  Systems of linear equations (Gaussian elimination, row operations)
+  Eigenvalues & eigenvectors (basics, 2×2 cases)
+  Linear transformations
+
+  Phase 6: Discrete Mathematics (For Security & Logic)
+  Set theory (union, intersection, complement, Cartesian product)
+  Logic (truth tables, implication, contraposition, direct/indirect proofs)
+  Combinatorics (permutations, combinations, binomial theorem)
+  Recursion & recurrence relations
+  Basic graph theory (vertices, edges, connected components, trees, cycles)
+
+  Phase 7: Calculus & Probability
+  Single-variable Calculus
+  Limits & continuity
+  Derivatives (rules, applications to slopes/optimization)
+  Integration (indefinite, definite, area under curve)
+  Taylor expansions (first/second order)
+  Probability & Statistics
+  Probability rules (addition, multiplication, complement)
+  Conditional probability, independence, Bayes’ theorem
+  Random variables (discrete & continuous)
+  Distributions: Bernoulli, Binomial, Geometric, Uniform, Normal, Exponential
+  Expectation, variance, standard deviation
+  Central Limit Theorem (CLT – intuitive level)
+  Hypothesis testing basics (confidence intervals, p-values, t-tests)
+
+  Phase 8: Multivariable Calculus & Advanced Linear Algebra
+  Functions of several variables, partial derivatives, gradients
+  Directional derivatives, Jacobian, Hessian (basics)
+  Optimization with constraints (Lagrange multipliers)
+  Basis, dimension, rank, null space, column space
+  LU/QR decompositions
+  Singular Value Decomposition (SVD)
+  PCA applications
+
+  Phase 9: Optimization & Information Theory (For AI/Security)
+  Optimization
+  Convex sets, convex functions
+  Gradient descent, SGD basics
+  Adam/RMSProp (conceptual)
+  Newton’s method
+  Regularization concepts (L1, L2 norms)
+  Big O notation (complexity basics for algorithms)
+  Information & Coding Theory
+  Entropy, cross-entropy, mutual information
+  KL divergence
+  Basics of coding theory (error correction, Hamming idea)
+  Modular arithmetic (crypto basics)
+  Finite fields overview
+  (Optional but useful) Markov chains (basics, for RL + security modeling)
+
 
 
 
