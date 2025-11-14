@@ -2535,6 +2535,107 @@ Would you like me to make this into a **formatted meeting doc (Markdown or Googl
   (Optional but useful) Markov chains (basics, for RL + security modeling)
 
 
+~
+
+
+13th November -
+
+- I got this error -
+
+  UnicodeDecodeError: 'charmap' codec can't decode byte 0x90 in position 8761: character maps to <undefined>
+
+  Why? - Bcoz while decoding .txt files the system uses an old way of encoding that is cp1252. It uses hex coding for mapping numbers and characters. but the some mapping of numbers like (0X90) are undefined. And since the document had that number it caused issue. Changing the encoding to utf-8 solved this issue because it is modern universal encoding for Unicode. Every possible character (including emojis, math symbols, Asian text) can be represented safely.
+
+  Why cp1252 is still in use if it is outdated? - because so many other softwares would break as they still follow this way. It was kind of a backward compatibility.
+
+
+
+
+- tckt - 56 
+
+  Description
+  As a consumer of the MCP Client package
+  I want to be able to install versions of the package from artifactory other than v3.10 of python
+  so that I can use python3.11 and 3.12 with the package.
+  
+  AC
+  . Confirm whether or not the MCP Client Package is compatible with python versions greater than 3.10 (e.g 3.11, 3.12)
+  . If not, update the Jenkins pipeline for the mcp client repo (https://github.com/nike-edaaml/aiml-mcp-client) to build and publish python3.11 and python3.12 versions of the package.
+  . If yes, add tests to the Jenkins Pipeline to run our unit tests on python 3.11, 3.12 to prevent regressions.
+
+
+
+- ⭐ Best Outfit Formulas (Copy-Paste for Daily Use)
+    
+    Formula 1: Light + Dark Contrast
+    Blue jeans + white shirt + milk-coffee sneakers
+    → Safe, polished, effortless.
+
+    Formula 2: Monochrome Neutral
+    Black jeans + grey shirt + sneakers
+    → Understated but stylish.
+
+    Formula 3: Earthy Blend
+    Olive pants or olive shirt + black jeans + sneakers
+    → Earthy + modern.
+
+    Formula 4: Smart Casual
+    Navy chinos/jeans + cream/off-white shirt
+
+    Formula 5: Soft + Warm
+    Beige shirt + blue jeans
+    → Matches the same family as your sneaker color.
+
+
+~
+
+
+14th November - 
+
+
+- AI vs ML vs DL -
+
+    AI - a vast field of making machines intelligent to think and solve complex problems and human like Behavior.
+    ML - This is a subset of AI that learns and trains on data and patterns so that it can generate accurate results without being explicitly hard coded into it.
+    DL - A subset of ML that deals with neural networks and many layers to learn Hierarchical representation.
+
+
+- AI and it's cons -
+
+  - AI hallucination disorder - blindly believing AI 
+  - AI induced psychosis
+  - AI companions
+  - AI making us dumber
+
+- Supervised vs Unsupervised Learning - 
+
+  - SL - training of models with labeled data
+    Types of SL - 
+      Regression - Linear and Polynomial
+      Classification - Binary, Multi-class and Multi-level
+  
+  - USL - training with unlabeled/raw data
+    Types -
+
+      Clustering - 
+        - K-means (divide elements of similar types into k groups ad=nd then maybe find average until they are stable...or something like that.)
+        - Hierarchical - sort every item by itself and then keep merging the items of similar category together to build a tree. then cut it later into various clusters.
+
+      Dimensionality reduction - Reduce the complexity of data points by representing with smaller number of features. Useful for data compression or data visualization.
+        - PCA 
+        - Auto encoders
+
+  - Semi SL - a small chunk of labeled data while a huge pool of unlabeled data.
+
+  - Reinforcement learning - learning based on reward/reprimand system and the model learns in an optimized manner.
+
+    state -> Action -> reward/penalty
+
+  - ensemble methods - combining models for better accuracy.
+
+
+
+
 
 
 
