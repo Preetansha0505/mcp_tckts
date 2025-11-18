@@ -2634,12 +2634,177 @@ Would you like me to make this into a **formatted meeting doc (Markdown or Googl
   - ensemble methods - combining models for better accuracy.
 
 
+~
+
+17th November - 
+
+- What is a wheel file in python?
+
+- Neural Networks -
+
+  - Neuron 
+    - a thing that holds a number between 0 and 1. this number determines the grey scale resolution of this neuron. And first layer of the network was made up of 28 * 28 matrix (784) neurons. The number inside these neurons is called its activation.
+
+    - The last layer of the network has 10 neurons. Each represents a number from 0 to 9. The activation number (0 to 1) in these neurons represents how much the system thinks about the given image corresponds with the given digts.
+
+    - how the process of recognizing the digits should be handled? Through hidden layers.
+
+
+- Jenkins - 
+
+    - Automate all the building and deploying operations
+
+
+- Wrapper?
+- Similarity (cosine)
+- 
+
+- Elicitation is a CIA technique (0:20) developed by John Nolan (0:24) that focuses on using statements instead of questions to gather information without raising suspicion (0:41). The core idea is to trigger a person's natural inclination to correct inaccuracies or provide more details when presented with a statement, rather than directly asking a question that might put them on guard (2:01).
+
+  Key techniques of elicitation discussed in the video include:
+
+    - Correcting the record: This involves making an intentionally incorrect statement to prompt the other person to offer the correct information (1:22). For example, stating an incorrect salary for an employee to get them to reveal their actual earnings (1:24-1:35), or an incorrect date for a company's move to get the real date (4:35-4:43). This method was notably used by Soviet spies during the Cold War to extract information from US Navy sailors (3:39).
+    - Disbelief: Expressing disbelief about a statement can encourage the other person to provide more details to convince you (2:47). For instance, if someone says they had no challenges on a trip, expressing disbelief can lead them to elaborate on the difficulties they faced (2:58-3:07).
+    - Bracketing: This technique involves providing a range (e.g., "between March and May" or "between 39 and 59") to encourage the person to give a more precise answer within or outside that range (4:59).
+    - Using "So" or "I bet": Starting a statement with "So" or "I bet" can facilitate conversation and encourage the other person to share information (5:18). An example is saying, "I bet you hate that coffee," which often leads to a correction or agreement and further details about their preferences (5:39-6:00).
+    
+  The general rule of thumb for elicitation is that the more sensitive the information you need, the fewer questions you should ask (6:31). Instead, statements make the person feel like they are volunteering information, bypassing their natural security alarms (2:21-23-24, 3:32).
+
+
+- Dr. Joe Dispenza explains quantum manifestation by emphasizing the power of individuals in the quantum realm (0:00-0:05). He highlights that the quantum realm is not physical but is composed of energy, frequency, vibration, information, and consciousness (0:08-0:25).
+
+  Key concepts discussed include:
+
+    - The field governs the particle: Dispenza references Einstein's idea that the field, not the particle, controls matter. This implies that by changing information in the field, one can affect physical reality (0:30-0:44).
+    - The nature of reality: He explains that the atom is mostly energy and information, suggesting that our perceived physical reality is an illusion of separation (0:47-1:10).
+    - Creating from the field: To manifest from the quantum field, one must shift attention away from the three-dimensional world and enter a state of "nothingness" – pure consciousness in the present moment (1:11-2:06).
+    - Brain coherence: By opening awareness to this "nothing," the brain becomes highly organized and coherent, with different compartments unifying and resonating at the same frequency. This coherent brain produces a strong electrical signal of intention (2:41-4:01).
+    - Heart coherence and love: The energy of the heart, particularly love, is crucial. A coherent heart produces a magnetic field that can draw future experiences to you. Love is considered the "glue that holds the atom together" (4:44-5:17).
+    - Vibrational match and synchronicities: When there is a vibrational match between one's energy (coherent brain and heart) and a potential in the quantum field, synchronicities and opportunities appear, leading to the manifestation of desires (5:23-5:39).
+    - Realizing innate power: The video concludes by emphasizing that when these manifestations occur, people realize their innate power as creators of their own lives, proving what they may have forgotten (5:47-6:04).
+
+
+~
+
+
+18th November - 
+
+
+- Neural Network - 
+
+  - Hidden layers -
+
+    - The number of these layers can vary and depends on the model architecture (hopefully). The number of neurons it consists can also vary. In specifics there is a lot of room to experiment in this structure.
+
+    - the way the network operates is activation of one layer determines the activation of another layer. the heart of this information sharing mechanism is the process of how these activations works. Some group of activations fire some other group to activate. 
+
+    - Eg - In an image of the digit, the 784 neurons will be activated according to the resolution of it. A pattern which was recognized by the next then the next until with the last layer the network made its choice of what digit represents by the number.
+
+    - but why the layers? what did we expect here? 
+
+      - Let's suppose we have images of digits and each digit is made up of certain edges and loops (a set of edges forming a loop). So hopefully the hidden layer's neurons contains a set of these edges...(that is what i understood thus far). But does the network actually works this way is another question. We'll see more on this in the training section.
+
+      - many Recognition tasks works like this, let it be image recognition or audio recognition.
+
+    - how the mechanism works?
+
+    - How does the training works?
+
+    - how these connection actually works?
+
+      - In the design of networks for recognizing the digits from images we need a mechanism where pixels can be recognized as edges, then edges can be recognized into patterns and then patterns into digits.
+
+      - let's say we have one single neuron in the hidden layer and all the neurons of the first layer are connected with it with a weighted edge. Those weights can be positive as well as negative.
+      
+      Calculating a rough estimation using the formula
+
+        w1a1 + w2a2 + ... + wnan
+
+        w = weight of the connection
+        a = activation number of the neuron from the first layer
+
+
+        this estimation can be any number. But for this network we need activations between 0 and 1. So a common way is to use a common function (sigmoid function aka logistic curve, ReLU function) that squishes this number line within this range.
+
+
+      - Sigmoid func - very -ve inputs end up near 0 and +ve inputs near 1 and it steadily increases around the input 0.
+
+      - So the activation of the neuron here is the measure of how +ve the relevant weighted sum is. But maybe we want the neuron to light up when the sum is > 10. A bias for inactivity. then we'll just add a number say -ve 10 (bias) to the above equation before pumping it into the sigmoid func.
+
+      weights - tells the pattern this neuron in the 2nd layer is picking up on.
+      bias - how high the sum needs to be for the neuron to be meaningfully active.
+
+      - And that is just one neuron. Every neuron in this layer is getting connected to all the 784 neurons from the first layer. and each connection has its own associated weight. Each has a bias as well. So in total
+
+       -> 784 * 16 connections (weights/ W)
+       -> 16 bias (B)
+
+       And this all just from the connections of the first two layers in our four layer architecture. the connections of the other layers also have W and B associated with them. In total 13002 W and B. 
+
+       13000 knobs that can be tweaked and turned that can make this network behave in different ways.
+
+       learning - finding the right setting of Ws and Bs that'll solve the problem at hand.
+
+       getting familiar with W and B will help to understand why the network does or doesn't work.
+
+       A more notational way of representing this is to organize the activation number in a column as a vector.
+       And then the weights as a matrix where each row corresponds with the connections of neurons to a particular neuron of the next layer.
+
+       a neuron is also a function where it takes input from one layer and spits out a number b/w 0 and 1 as an output.  
+
+       
+
+
+    - Resources -
+
+      - https://www.sciencedirect.com/journal/neural-networks
+      - https://arxiv.org/pdf/1404.7828
+      - https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=1&t=262s
+
+
+- WTF is a ruff violations?
+
+- File not found error - Directory not there so the hook raised this error. What is hook here? reason is apart from the test harness nothing tells hook where the original blurprint lives. (need to search this whole thing)
+
+- The parity-based approach in single-bit problems is a fundamental error detection method in digital systems, using an extra bit (the parity bit) to ensure the total number of '1's in a data unit is either always even or always odd. This method reliably detects a single-bit error but cannot correct it. 
+
+  To find if the last character in the array is a one-bit character, we can use a parity-based approach. First, we remove the last element, which is the character we want to check. We then initialize a parity variable and iterate backward through the array. Each time we encounter a 1, we toggle parity with parity ^= 1, effectively flipping its value. This toggle allows us to track whether the number of 1s is odd or even.
+
+  At the end, if parity is 0, it indicates the last character is a one-bit character; if parity is 1, it’s part of a two-bit sequence.
+
+
+- How to know which article/resources were written by AI and which by humans?
+
+- glazing / sycophancy -
+
+  in LLMs - 
+  
+    https://arxiv.org/pdf/2310.13548
+    https://arxiv.org/pdf/2504.18412
+
+  
+  preventive measure -
+
+    prompt - hey you need to argue against my ideas and articulate your own arguements with nuances
 
 
 
 
 
 
+
+
+
+
+
+
+
+- Why does it feel like i went into a kind of date with Aspal?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+
+Maybe it was but it was not what i intended it to be and it was pretty boring to me. and i do want distractions right now!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+Now we'll have to fix this mess. I know it is a slow process but I fucking have to. period.
 
 
 
