@@ -2101,7 +2101,7 @@ The resource doesn’t execute code or perform an action when accessed — it on
     - .yml will be the structure of the documentation
     - .md file will be needed to start with the documentation
 
-      > '#' for fontsize
+      > '' for fontsize
       > '```' for code snippets
       > '' for bold texts
 
@@ -2230,11 +2230,11 @@ The resource doesn’t execute code or perform an action when accessed — it on
     Attempts to prevent this -
 
     | Optimization                    | How it helps                                    |
-    | **Selective context injection** | Only include tools relevant to the user’s query |
-    | **Shorter docstrings**          | Trim verbose function descriptions              |
-    | **Caching tool schemas**        | Don’t resend unchanged tool info every request  |
-    | **Incremental sessions**        | Only update changed context                     |
-    | **Compression & embeddings**    | Summarize or embed long resource docs           |
+    | Selective context injection | Only include tools relevant to the user’s query |
+    | Shorter docstrings          | Trim verbose function descriptions              |
+    | Caching tool schemas        | Don’t resend unchanged tool info every request  |
+    | Incremental sessions        | Only update changed context                     |
+    | Compression & embeddings    | Summarize or embed long resource docs           |
 
 
     Fantasy - That book of spells might be thousands of words long — but the apprentice (model) needs it each time to cast the right spell safely.
@@ -2300,45 +2300,45 @@ Perfect — let’s break this down carefully.
 
 ---
 
-## 🧩 **Agenda Breakdown (Detailed Explanation)**
+ 🧩 Agenda Breakdown (Detailed Explanation)
 
-**Main topic:**
-How to **automate integration testing** between the **server template** and the **MCP tools** so that when new versions of MCP tools are released, we can **quickly detect compatibility issues**.
+Main topic:
+How to automate integration testing between the server template and the MCP tools so that when new versions of MCP tools are released, we can quickly detect compatibility issues.
 
-### **Context**
+ Context
 
-* You have a **server template** (likely a reference implementation or starter repo).
-* The **MCP tools** are separate libraries/packages that the server depends on.
-* Every time the MCP tools release a **new version**, there’s a risk that something breaks in the server template.
-* The goal is to **automate compatibility testing**, so that:
+* You have a server template (likely a reference implementation or starter repo).
+* The MCP tools are separate libraries/packages that the server depends on.
+* Every time the MCP tools release a new version, there’s a risk that something breaks in the server template.
+* The goal is to automate compatibility testing, so that:
 
   * You don’t have to manually check compatibility after every release.
   * Integration issues are caught early.
   * The workflow remains consistent and maintainable.
 
-So, this meeting (huddle) is about finding a **sustainable automation approach** for testing and validating these integrations.
+So, this meeting (huddle) is about finding a sustainable automation approach for testing and validating these integrations.
 
 ---
 
-## 🧠 **Current Proposal (as per image)**
+ 🧠 Current Proposal (as per image)
 
-1. **Pin the library version** in the template (`ai-ml-mcp-library==0.1.1`).
-2. When a **new major version** is released:
+1. Pin the library version in the template (`ai-ml-mcp-library==0.1.1`).
+2. When a new major version is released:
 
-   * Jenkins automatically creates a **PR** to bump the version in the server template.
+   * Jenkins automatically creates a PR to bump the version in the server template.
    * Integration tests run.
-   * If all pass → **manually merge** the PR.
+   * If all pass → manually merge the PR.
    * If tests fail → investigate and fix issues.
 
 This ensures you’re always aware when breaking changes occur.
 
 ---
 
-## 🚀 **Additional Solution Ideas (to strengthen automation)**
+ 🚀 Additional Solution Ideas (to strengthen automation)
 
-### **1. Nightly or Weekly Compatibility Matrix Testing**
+ 1. Nightly or Weekly Compatibility Matrix Testing
 
-* Run scheduled CI jobs that test the **server template** against:
+* Run scheduled CI jobs that test the server template against:
 
   * Latest MCP release (unstable)
   * Latest stable release
@@ -2347,15 +2347,15 @@ This ensures you’re always aware when breaking changes occur.
 
 ---
 
-### **2. Use a “Canary” Branch or Environment**
+ 2. Use a “Canary” Branch or Environment
 
-* Create a **canary branch** (like `auto-test-mcp-latest`) that automatically updates to the latest MCP version and runs integration tests daily.
+* Create a canary branch (like `auto-test-mcp-latest`) that automatically updates to the latest MCP version and runs integration tests daily.
 * If it fails, it doesn’t affect the main branch, but alerts are sent to the dev team.
 * Benefit: Continuous monitoring without manual PR churn.
 
 ---
 
-### **3. Dependency Update Bots (e.g., Dependabot / Renovate)**
+ 3. Dependency Update Bots (e.g., Dependabot / Renovate)
 
 * Configure bots to automatically raise PRs when dependencies (like MCP tools) get new versions.
 * Integration tests run automatically on each PR.
@@ -2363,77 +2363,77 @@ This ensures you’re always aware when breaking changes occur.
 
 ---
 
-### **4. Version Compatibility Testing in MCP Repo**
+ 4. Version Compatibility Testing in MCP Repo
 
-* Reverse the direction: when the MCP library itself changes, trigger tests in the **server template repo** via a webhook.
+* Reverse the direction: when the MCP library itself changes, trigger tests in the server template repo via a webhook.
 * Ensures new MCP releases are validated *before* being published.
 * Benefit: You catch breaking changes early in the source repo.
 
 ---
 
-### **5. Semantic Version Awareness**
+ 5. Semantic Version Awareness
 
 * Implement semantic version rules in the CI:
 
-  * Auto-test all **minor and patch** updates silently.
-  * Auto-create PRs for **major** updates only (since they’re breaking).
+  * Auto-test all minor and patch updates silently.
+  * Auto-create PRs for major updates only (since they’re breaking).
 * Benefit: Reduces unnecessary PR noise.
 
 ---
 
-### **6. Test Isolation and Mocking**
+ 6. Test Isolation and Mocking
 
-* Ensure integration tests use **isolated environments or containers** (Docker).
+* Ensure integration tests use isolated environments or containers (Docker).
 * Can be integrated with Jenkins or GitHub Actions.
 * Benefit: Stable and reproducible testing setup.
 
 ---
 
-## 🧭 **Additional Discussion Pointers**
+ 🧭 Additional Discussion Pointers
 
-1. **Ownership:**
+1. Ownership:
 
    * Which team owns the integration test maintenance — MCP or server template team?
 
-2. **Tooling Choice:**
+2. Tooling Choice:
 
    * Should we standardize on Jenkins, GitHub Actions, or another CI system?
 
-3. **Alerting Mechanism:**
+3. Alerting Mechanism:
 
    * How do we notify teams when integration tests fail? (Slack, email, dashboard?)
 
-4. **Test Coverage:**
+4. Test Coverage:
 
    * Do we need end-to-end tests, or just interface-level compatibility checks?
 
-5. **Rollout Plan:**
+5. Rollout Plan:
 
    * Start with major releases, then expand automation scope later.
 
-6. **Manual vs Automated Merge:**
+6. Manual vs Automated Merge:
 
    * Should we keep manual review (safe) or go fully auto-merge if all tests pass (faster)?
 
 ---
 
-## 🗂️ **One-Slide Summary (for Huddle Presentation)**
+ 🗂️ One-Slide Summary (for Huddle Presentation)
 
-**Title:** Automating Integration Testing Between Server Template & MCP Tools
+Title: Automating Integration Testing Between Server Template & MCP Tools
 
-| **Focus Area**         | **Proposal / Ideas**                                                                                                                             |
+| Focus Area         | Proposal / Ideas                                                                                                                             |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Version Control**    | Fix library versions in template                                                                                                                 |
-| **Automation Trigger** | Jenkins auto-generates PRs on new major releases                                                                                                 |
-| **Testing**            | Run integration tests automatically                                                                                                              |
-| **Validation**         | Manual merge if tests pass                                                                                                                       |
-| **Alternative Ideas**  | - Canary branch for latest testing <br> - Dependabot for PR automation <br> - Scheduled compatibility tests <br> - Reverse-trigger from MCP repo |
-| **Discussion Points**  | Ownership, Alerting, Coverage, Merge strategy                                                                                                    |
-| **Goal**               | Ensure seamless compatibility and faster validation for MCP–server integrations                                                                  |
+| Version Control    | Fix library versions in template                                                                                                                 |
+| Automation Trigger | Jenkins auto-generates PRs on new major releases                                                                                                 |
+| Testing            | Run integration tests automatically                                                                                                              |
+| Validation         | Manual merge if tests pass                                                                                                                       |
+| Alternative Ideas  | - Canary branch for latest testing <br> - Dependabot for PR automation <br> - Scheduled compatibility tests <br> - Reverse-trigger from MCP repo |
+| Discussion Points  | Ownership, Alerting, Coverage, Merge strategy                                                                                                    |
+| Goal               | Ensure seamless compatibility and faster validation for MCP–server integrations                                                                  |
 
 ---
 
-Would you like me to make this into a **formatted meeting doc (Markdown or Google Docs-ready)** with agenda, discussion points, and action items? That version would be perfect for sharing in your engineering huddle.
+Would you like me to make this into a formatted meeting doc (Markdown or Google Docs-ready) with agenda, discussion points, and action items? That version would be perfect for sharing in your engineering huddle.
 
 
 - I taught myself Math for AI/ML and Security (not in university). At first, I wasn’t sure what to study, but I used Perplexity AI to figure things out. It took me 2–3 days to rework my roadmap, align it with my goals, and add topics useful for both AI/ML and Security. Here’s what I managed to study over a full year while working full-time as a Security Engineer
@@ -2786,6 +2786,409 @@ Would you like me to make this into a **formatted meeting doc (Markdown or Googl
   preventive measure -
 
     prompt - hey you need to argue against my ideas and articulate your own arguements with nuances
+
+~
+
+
+19th November -
+
+
+- MCP vs RAG - 
+
+  Data Access - common feature
+
+  3 things - Purpose, data, process
+
+            MCP         RAG
+
+            Act         Add
+            Systems     Docs
+            Do          know
+
+                  Info
+                  Out
+                  Know
+
+  MCP             RAG
+
+  Disc            Ask
+  Understand      Retr
+  plan            Return
+  Exec            Augment
+  Integrate       Generate
+
+
+  Choose between them as relevant for security, govrenance and scale
+
+
+
+- What are genie tests we performed?
+
+
+- AI psychosis paper link - https://arxiv.org/pdf/2509.10970
+
+
+- "caused the database to output multiple entries into a 'feature file' used by our Bot Management system." - security / bot-detection infrastructure jargon
+
+    Meaning - Some process inserted a bunch of signals or behavioral indicators into a file (or table) that the bot-detection system uses to decide whether traffic is suspicious.
+
+
+~
+
+20th November -
+
+- Agent communicating with Agent Protocol using MCP (kind of like agent protocols meshing up with MCP)
+
+
+~
+
+
+21st November -
+
+
+Description
+
+As a user/developer of the MCP client repo
+I want the client to handle determining what authentication to use, based on inputs when the client connection is made so that the code is more modular
+
+AC 
+
+. Dependency of the MCPClient on Databricks auth removed
+. The auth supports no auth as well (make default argument for Auth=None)
+. Unit tests added for No Auth, Dbx auth,
+· Ruff formatted doc strings added
+. Code PR'd and merged
+
+
+Meaning - 
+
+Let me break this ticket down line-by-line and tell you *exactly* what it wants you to do, what changes are expected in the repo, and how to approach the implementation.
+
+---
+
+ ✅ What This Ticket Wants (Simple Summary)
+
+The MCP client currently depends on a specific authentication method (Databricks auth).
+This ticket wants you to remove that coupling and make authentication pluggable, optional, and modular.
+
+In other words:
+
+> “Make the MCP Client choose the right authentication method automatically based on the connection the user makes — AND support *no auth* at all.”
+
+This makes the client cleaner, more generic, and usable beyond Databricks.
+
+---
+
+ 📌 Detailed Breakdown of Each Requirement
+
+I will explain each line of the Acceptance Criteria (AC) in practical engineering terms.
+
+---
+
+ 1. “Dependency of the MCPClient on Databricks auth removed”
+
+ What it means:
+
+Right now, your MCPClient probably imports, instantiates, or relies on some Databricks authentication logic (e.g. bearer token, workspace token, DBX-specific OAuth).
+
+The ticket wants you to:
+
+* remove direct imports like `from databricks.sdk import …`
+* remove assumptions that Databricks auth is always used
+* decouple authentication from the main client class
+
+ What you must do:
+
+* Move Databricks auth into a separate module, class, or strategy (strategy pattern).
+* The MCP client should accept a generic `Auth` object instead of a Databricks object.
+
+---
+
+ 2. “The auth supports no auth as well (make default argument for Auth=None)”
+
+ What it means:
+
+User should be able to connect with:
+
+```python
+client = MCPClient()            No authentication
+client = MCPClient(auth=None)   Explicitly no auth
+```
+
+And this should work.
+
+ What you must do:
+
+Modify `MCPClient.__init__` to support something like:
+
+```python
+def __init__(self, auth: Auth | None = None):
+    self.auth = auth
+```
+
+And in the connection logic:
+
+```python
+if self.auth:
+    token = self.auth.get_token()
+else:
+    token = None
+```
+
+No crashes, no required headers.
+
+---
+
+ 3. “Unit tests added for No Auth, Dbx auth”
+
+ What it means:
+
+Write tests to verify:
+
+ ✔ No Auth Case
+
+* Creating a client with `auth=None` works.
+* Connecting without auth does not fail.
+* Request headers do not contain authorization headers.
+
+ ✔ Databricks Auth Case
+
+* Creating a client with `DatabricksAuth(...)` works.
+* Token is attached to outgoing requests.
+* Errors are handled properly if token fetch fails.
+
+ Probably expected test files:
+
+```
+tests/test_auth_none.py
+tests/test_auth_dbx.py
+```
+
+---
+
+ 4. “Ruff formatted doc strings added”
+
+ What it means:
+
+The project uses ruff for linting and formatting.
+
+You must:
+
+* Add proper function docstrings following Ruff's pydoc style.
+* Make sure `ruff check` and `ruff format` pass.
+* Ensure all your new code/docstrings are compliant.
+
+Examples:
+
+```python
+def get_token(self):
+    """Return a Databricks authentication token."""
+```
+
+---
+
+ 5. “Code PR’d and merged”
+
+ What it means:
+
+Submit your changes in a Pull Request into the dev branch.
+
+Checklist:
+
+* your code compiles
+* tests pass
+* ruff passes
+* documentation updated
+* reviewers approve
+
+---
+
+ 🧠 What the Ticket Is REALLY Asking For (Architectural Goal)
+
+The main purpose of this ticket is to:
+
+ Make authentication a pluggable component.
+
+Think of it like this:
+
+ Before
+
+```
+MCPClient → DatabricksAuth (hard dependency)
+```
+
+ After
+
+```
+MCPClient → AuthStrategy (optional)
+                     ↳ DatabricksAuth
+                     ↳ NoAuth
+                     ↳ FutureAuthType
+```
+
+This makes the MCP Client modular, clean, extensible, and not tied to Databricks.
+
+---
+
+ 🧪 Example Expected API Design
+
+```python
+class MCPClient:
+    def __init__(self, auth: Auth | None = None):
+        self.auth = auth
+
+    async def connect(self):
+        token = self.auth.get_token() if self.auth else None
+        headers = {}
+        if token:
+            headers["Authorization"] = f"Bearer {token}"
+        ...
+```
+
+Auth strategy example:
+
+```python
+class DatabricksAuth:
+    def __init__(self, workspace_url, client_id, client_secret):
+        ...
+
+    def get_token(self):
+         returns a JWT token
+        return ...
+```
+
+---
+
+ 🧩 Your Deliverables
+
+You need to produce:
+
+ Code changes:
+
+✔ Remove Databricks dependency
+✔ Add generic auth architecture
+✔ Add NoAuth support
+✔ Update import paths
+✔ Refactor MCPClient to accept auth strategy
+
+ Tests:
+
+✔ No auth
+✔ Databricks auth
+
+ Formatting:
+
+✔ Docstrings (Ruff style)
+
+ Documentation:
+
+✔ Short explanation (optional depending on repo)
+
+ PR:
+
+✔ Created and merged to dev
+
+---
+
+ 🎯 TL;DR
+
+This ticket wants you to:
+
+* remove hard-coded Databricks auth from MCPClient
+* add flexible, pluggable auth system
+* support connecting with no authentication at all
+* add tests + docstrings
+* submit PR
+
+This is a clean architecture + refactoring ticket, not a feature addition.
+
+---
+
+If you want, I can help you design the exact class structure, the refactor plan, or even write a starter branch structure for your PR.
+
+
+- Explored 1 file - 
+      The user can't pass ctx . It's a server-side
+      implementation detail. When the client sends a tool
+      invocation, it only transmits the declared inputs (like
+      genie_space_id, content, databricks_host ). The
+      MCP server (via FastMCP) receives that RiC, wraps
+      it in a request-specific Context, and calls the tool
+      coroutine as await start_conversation(ctx, ** in
+      puts) . So context comes from the server runtime-
+      clients never construct or transmit it explicitly.
+
+      Improve authentication handling in MCP clier +
+      but how user will pass that to server?
+
+
+
+- Physics of AI -
+
+  - Ising model - where atoms were used in whether up and down momentum. During multiple experimentation like magnetism, temperature, etc and as an onservation it was noted that they shift their momentum accordingly. Even get influenced by its neighbors to shift its momentum. At one point it almost became blobs/groups of similar momentum. And following this pattern there comes a time when it all turned into one momentum.
+
+  - Hopfield network - Following this model, John hopfield tried to find patterns and instead of atoms he used artificial neurons that have states (active or deactive) and connected them with edges that has weights. +ve weight pushing the neurons to adopt a same state. 0 state means the neurons are neutral of each other. -ve weights meaning they push each other to adopt an opposite state. With time they form a network of some sort and each neuron recieves a sum of all weights that decides whether it is activated or not. And over time the network progresses towards a stable state and low energy. 
+
+    
+  The great adv of this model is we can tweak all its parameters. Once changed it loses the equillibrium and becomes unstable. the energy state affected due to this and when the model relaxes back, it finds a new equillibrium configuration. This means we can change the energy state and dig holes in it as the model finds some new configuration. Indicating those digs became equillibrium points of that configuration.
+
+  Hopfield model recognizes this pattern so that whenever the model tweaks its parameters it will naturally converge into the closest recognized pattern in the energy scale. A powerful tool that allows machine to learn. Over time it evolves. Today AI uses this model to propagate info from synapses to synapses. the process of training these models is machine learning.
+
+
+  - Gaussian Process - 
+
+    neural network -> quantum field Theory
+
+    meaning it takes two points and output a value as an answer. Let's suppose those values are x and y then one neuron can be represented as (x, y). AKA a coordinate in a dimension system. Hence neural network behaves like a field assigning every value as a point in the space. the values in the space can determine lots of things like temp, vel of the liquid or gravity. here these values represents neurons which when tweaked can change the shape of the field.
+
+    let's change the parameters and visualize the change in the superposition of all the values. we will see that the outputs of some networks will follow the statistical pattern (getting same results). this distribution of statistical results will change as we increase the number of neurons. over time this distribution seems to smoothen into a curve or wave pattern aka gaussian pattern. Surprisingly this is true for all input values despite the number of layers in the network.
+
+
+  - paper of NN and quantum field theory - https://arxiv.org/pdf/2008.08601
+
+  - The connection between quantum field and neural network is -
+
+      - In the quantum field, particles behaves randomly, fluctuating without interaction with each other creating a statiscal distribution.
+      - This distribution follows gaussian pattern as well.
+      - Just like the neurons in the infinitely wide neural network. 
+
+      - However the field with interaction is somewhat tricky. Physicists handle it by adding corrections in the gaussian pattern distribution as it did not form a smooth curve.
+      - And just like this, the finite neural network distribution had to be adjusted/ corrected to match the gaussian pattern.
+      
+      - This proves the strong analogy between these two.
+
+      - In quantum field theory (a best description of reality thus far has various complications like simulating the behaviours of quarks in the nuclues of atoms ) 
+
+      However, it is believed that NN is a way to solve these challenges. Researchers are able to reproduce without interactions patterns with NN and with interaction patterns like Phi4 (particles interacted with pairs) or certain models of conformal field theory or certain symmetry.
+
+      NN can also solve realistic problems using particle theory. It can be studied using physics like fiemann diagram that are used to study the interactions between particles.
+
+
+  - Conclusion -
+
+    Let's concludes by highlighting the multiple links between physics and artificial intelligence. AI models are already being used in various branches of physics, including:
+
+      - Experimental physics: for tasks like denoising gravitational wave signals and analyzing data to find new particles.
+      - Theoretical physics: to solve mathematical problems, study quantum fields, and explore string theory.
+      - Condensed matter physics: to discover material properties and simulate phase transitions.
+      - Astrophysics: to trace structure formation, reconstruct images, and map dark matter.
+      Conversely, physics tools can help understand AI, which are often seen as
+
+
+    Physics concepts such as enegry landscapes, quantum field and particle interactions can become a bridge to translate the black box that is AI into the language of physics??? (really???)
+
+  - Parameter space - space calculated by individual parameters, I think
+  - Function space - space calculated by input and its output, I think
+  - Asymptotic - line or curve approaching towards Infinity
+
+
+
+
+
+
+
+
+
 
 
 
