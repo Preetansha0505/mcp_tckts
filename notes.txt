@@ -3181,6 +3181,71 @@ If you want, I can help you design the exact class structure, the refactor plan,
   - Function space - space calculated by input and its output, I think
   - Asymptotic - line or curve approaching towards Infinity
 
+~
+
+1st December -
+
+- Abstract classes, methods and decorators - 
+
+  
+  It means the class is not to be instantiated on its own and only served as a blueprint for others. Also this achieves the abstraction/ polymorphism and promotes code reusability.
+
+
+tckt - MCP library generate documentation from docstrings
+
+
+https://www.freecodecamp.org/news/what-is-base64-encoding/
+
+
+~
+
+
+2nd December -
+
+
+- Daniel Pink discusses the growing problem of attention fragmentation and offers five science-backed steps to rebuild your attention span (0:15).
+
+Here are the key steps:
+
+Set a Baseline: Determine how long you can focus without distraction by timing yourself while reading a book (0:35). This establishes your starting point for training your attention like a muscle (0:52).
+Eliminate Attention Leeches: Design your environment to minimize distractions (0:57). This includes creating no-phone zones (1:10), turning off notifications (1:16), and closing unnecessary browser tabs (1:20).
+Practice Deep Work Rituals: Create consistent cues that signal to your brain it's time to focus, similar to how writers light a candle or coders put on a specific playlist (1:31). The consistency of the ritual is what matters (1:53).
+Leverage Breaks and Movement: Your brain isn't designed for constant focus (2:11). Take short breaks, walk around, or stretch to prevent burnout (2:20). Breaks are not deviations but rather a crucial part of performance (2:36).
+Reconnect Attention to Meaning: Before starting a task, ask yourself "Why does this matter? Who benefits?" (2:51). Writing down and keeping your purpose in view can fuel persistence and transform focus from a chore into a choice (3:04).
+
+
+- This video introduces the concept of a personal curriculum, a self-directed learning plan focused on personal interests, inspired by TikToker Elizabeth Jean (0:45). The creator explains that this movement is about celebrating lifelong learning and intellectual curiosity, allowing individuals to be more intentional with their free time (1:33-2:00).
+
+The video highlights several benefits of a personal curriculum:
+
+Combats "brain rot" and improves attention span by providing structure to curiosity (2:21-3:10).
+Helps follow through on interests and turns vague goals into concrete actions (4:20-4:30).
+Supports slow, deep learning and creates a fun sense of play (4:30-4:57).
+Encourages self-improvement and allows exploration without pressure (4:40-5:03).
+Prevents passive consumption and enables custom learning to fit one's schedule and energy levels (4:57-5:03).
+Builds self-trust and fosters consistency (5:19-5:29).
+The process of building a personal curriculum involves several steps:
+
+Brainstorming: Ask questions like "Which topics have I been interested in for months or years?" or "What skills do I wish I had?" (8:36-10:43). The goal is to dump all ideas without judgment (10:43-11:07).
+Narrowing it down: Identify topics that genuinely excite you rather than feeling like an obligation. Look for patterns and connections between ideas (11:23-13:42).
+Considering your timeline: Decide on the duration of your courses (e.g., monthly, quarterly). The creator prefers 3-month terms (13:54-15:06).
+Avoiding getting carried away: Start with a manageable number of courses (1-3) to prevent burnout (16:45-17:49).
+Finding resources: Gather books, articles, documentaries, podcasts, or online courses related to your chosen topics. University syllabi and online communities (like Reddit) can be great sources (17:50-21:56). The creator suggests finding resources first, then building the course around them (21:39-22:17).
+The video also provides a course syllabus template breakdown with sections for:
+
+Mission statement: Summarize what you aim to learn (22:42-22:57).
+Core questions or key topics: Outline what you want to examine (22:57-23:08).
+Required resources: List books, videos, or podcasts (23:08-23:18).
+Optional or supplemental resources: For extra exploration (23:19-23:34).
+Weekly structure or plan: Detail readings or activities for each week (23:35-25:13).
+Practices or habits: Incorporate daily/weekly activities to facilitate learning (25:15-25:44).
+Assignments or projects: Self-directed tasks to synthesize learning, such as journaling, presentations, or creative works (25:46-27:50).
+Final reflection: Questions to summarize the experience and identify future learning paths (28:26-29:19).
+Finally, the creator shares her own personal curriculum for the start of 2026, which includes:
+
+Tap dancing (33:06-36:01): A skill-based course focusing on fundamentals, history, and practice.
+Dante in Translation (36:19-37:58): An audit of a free Yale University course.
+Bisexual Erasure from Time Immemorial (38:00-39:30): A course built from scratch based on non-fiction books, exploring the history and modern aspects of bisexuality.
 
 
 
@@ -3196,18 +3261,6 @@ If you want, I can help you design the exact class structure, the refactor plan,
 
 
 
-
-
-
-
-
-
-- Why does it feel like i went into a kind of date with Aspal?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
-
-Maybe it was but it was not what i intended it to be and it was pretty boring to me. and i do want distractions right now!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-Now we'll have to fix this mess. I know it is a slow process but I fucking have to. period.
 
 
 
