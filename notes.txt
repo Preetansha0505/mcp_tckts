@@ -3249,17 +3249,102 @@ Bisexual Erasure from Time Immemorial (38:00-39:30): A course built from scratch
 
 
 
+~
+
+
+5 December -
+
+
+- Databricks -
+
+  - catalogs section is for schema (tables)
+  - jobs and pipelines - 
+
+      - Ingestion pipeline - Data extraction
+      - ETL pipeline - transforming, processing and putting it in a table
+      - jobs - timed execution of these pipelines
+
+  - Compute - computing the data. in free version, only serverless is available
+
+  - Marketplace - partner and connectors
+
+  - SQL section
+
+  - 🌟 Part 5 — Your Beginner Roadmap (30 Days)
+      
+      🔮 Week 1 — Foundations
+
+      Create a free Databricks account
+      Learn what clusters are
+      Learn notebooks
+      Learn basic Spark (very easy)
+
+      🔮 Week 2 — SQL + Delta Lake
+
+      Create and query tables
+      Learn writing/reading Delta tables
+      Learn file formats (JSON, CSV, Parquet)
+
+      🔮 Week 3 — Data Engineering
+
+      Transformations with Spark
+      ETL pipelines
+      Auto Loader
+      Workflows (jobs)
+
+      🔮 Week 4 — Machine Learning
+
+      Feature engineering
+      Train models with MLflow
+      Track experiments
+      Deploy models
+
+
+
+- Reconcile correlation effect with classical quantum Mechanics. Most of them required a radical change of attitude toward one or another well accepted tenet of conventional physics...?
+
+
+~
+
+11th December - 
+
+- Mosaic AI, dynamoDB, STRIDE, langflow, langchain and databricks
+
+- Databricks - 
+
+  - Catalog -> schema -> volumes(data lake) or table(organized library)
+  - Raw data (csv files, json, images, etc) use volumes. structured data / sql querying use tables.
+  
+  - | Use Case                   | Choose Volume | Choose Table |
+    | -------------------------- | ------------- | ------------ |
+    | Raw incoming files         | ✅ Yes         | ❌ No         |
+    | Storing folders            | ✅ Yes         | ❌ No         |
+    | Querying with SQL          | ❌ No          | ✅ Yes        |
+    | Supporting dashboards      | ❌ No          | ✅ Yes        |
+    | Cleaning/transforming data | ❌ No          | ✅ Yes        |
+    | Version control            | ❌ No          | ✅ Yes        |
+    | ML training data           | ❌ No          | ✅ Yes        |
+
+  - Delta table - like a magical notebook where nothing is lost and every history is recorded and stored for future reference.
+
+  A Delta Table is a safe, fast, never-corrupted, version-controlled upgraded table format built for real-world data engineering.
+
+  - command to access raw csv file in a volume - SELECT * from csv.`/Volumes/workspace/default/practiceseries/customerscsv.csv` //file path
+
+  - cheat sheet - https://jamesm.blog/data-engineering/databricks-cheatsheets/
 
 
 
 
+- LC - 3531. Count Covered Buildings
 
-
-
-
-
-
-
+- Manifest for kubernetes pod?
+- Pod vs deployment
+- terraform (.tf) files
+- use kubernetes secrets instead of putting values in .yml file of ku and even then it should be used as a ref. Use external secrets and encrypted secrets
+- How Restricting access of the app?
+- IaC languages used by Google and Azure
+- bicep vs tf(terraform)
 
 
 
