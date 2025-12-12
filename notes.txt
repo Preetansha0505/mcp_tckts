@@ -3347,7 +3347,23 @@ Bisexual Erasure from Time Immemorial (38:00-39:30): A course built from scratch
 - bicep vs tf(terraform)
 
 
+~
 
+
+12th December -
+
+- https://www.freecodecamp.org/news/how-to-compress-your-prompts-and-reduce-llm-costs/
+
+- https://www.freecodecamp.org/news/how-closures-work-in-javascript-a-handbook-for-developers/
+
+- https://www.freecodecamp.org/news/how-to-use-nlp-techniques-and-tools-in-your-projects-full-handbook/
+
+- Messier 87, ton 618
+
+- LLMLingua - https://github.com/microsoft/LLMLingua?tab=readme-ov-file
+https://arxiv.org/pdf/2407.02490
+
+- https://arxiv.org/pdf/2506.08872
 
 
 
