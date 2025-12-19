@@ -3366,6 +3366,89 @@ https://arxiv.org/pdf/2407.02490
 - https://arxiv.org/pdf/2506.08872
 
 
+~
+
+
+16 December -
+
+- The video, "The Smart Way To Program Projects," by The Coding Sloth, explains how to build projects more efficiently and effectively.
+
+  Key takeaways from the video:
+
+  Stop rebuilding what's already built (0:31): The creator emphasizes that many developers waste time recreating common features like login pages. Instead, they should use templates, pre-built components, or AI tools to handle repetitive tasks.
+  Leverage AI and templates (1:19): The creator showcases how AI tools like Lovable can program significant portions of a project, such as UI, authentication, and database setup, allowing developers to focus on the unique aspects that create value.
+  Understand different types of shortcuts (2:31):
+  Time shortcuts (2:33): These save time on tasks you already know how to do (e.g., templates, starter kits, CLI tools).
+  Knowledge shortcuts (2:44): These provide capabilities you don't yet possess (e.g., libraries, frameworks, APIs, AI tools). When used effectively, they can significantly increase productivity.
+  Focus on value (5:20): The creator stresses that a project's worth comes from solving real problems for real people, not from clean code or complex implementation. Value is directly proportional to the size of the problem solved.
+  Embrace feedback and rapid iteration (6:12): The video encourages developers to get feedback on their projects early and often, then iterate based on that feedback. This process helps identify and solve problems, leading to more valuable and useful projects.
+  Speed up iteration with shortcuts (7:21): To iterate faster, developers should utilize shortcuts, as writing code is often the biggest bottleneck.
+  Projects are impressive for problems solved, not code (7:51): The core message is that the true impressiveness of a project lies in the problem it solves and the value it creates, not just the underlying code.
+
+
+~
+
+
+17 December -
+
+
+- Infinites in gravity calculations remains a challenge...
+
+
+~
+
+
+18 December -
+
+- LLMs are probabilistic maps of language
+
+- Tool orchestrator -
+
+    - Steps:
+
+      1. Detect the need
+      2. Generating a structured function call
+      3. Executing the call
+      4. Return the result back - Return injection
+
+    Through these steps the model can perform executions using tool orchestration
+
+- Autoregressive model - generate one token at a time
+
+- when passing from one layer to another, what actually passes is the vector (hidden state) that lives in a multi dimensional space. Typically a few thousand dimension. this area is usually called an activation area and we can represent this as the model's internal state aka 'hidden thoughts' 
+
+- Concept vector - changing the length of it does not change the concept but only how strongly it is represented
+
+- Steering - We take the activation coming from the layers and adding them to the vectors to Reinforcement the  the LLMs to generate another vector
+
+- Monosemanticity is a concept in artificial intelligence, especially in Large Language Models (LLMs), referring to the idea that individual components (like neurons or features) in a model should represent a single, distinct, understandable concept, rather than multiple ones (polysemanticity) (explore this some more)
+
+~
+
+
+19 December - 
+
+- Terraform, AWS Data Engineer, Databricks, AWS EC2, A2A ,langgraph, Jenkins, AWS AgentCore, Databricks LLM, Multiagent Systems, Prompt engineering, RAG, Langchain, SQL also dynamodb Colima - explore these on this holiday
+
+- 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
